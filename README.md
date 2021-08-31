@@ -17,7 +17,7 @@ O aplicativo está disponível [aqui], sinta-se a vontade para modificá-lo/melh
 
 Seguindo as orientações contidas nos arquivos "nodemcu.png" e "pinagem nodemcu.txt", os sensores foram conectados no seguinte esquema:
 
-* [Sensor de Umidade]: pino A0 
+* [Sensor de Umidade do Solo]: pino A0 
 
 
 
