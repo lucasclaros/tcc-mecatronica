@@ -11,7 +11,7 @@ além de claro o SSID da rede wifi em que ele vai se conectar. Para o aplicativo
 
 ## - Funcionamento
 
-O programa configuras os servidores que estão armazenados cada tipo de dado: sensor de temperadura, umidade estado atual da bomba de água que irá irrigar e o estado da lampada de iluminação que ajuda no crescimento da plantação.
+  O programa configuras os servidores que estão armazenados cada tipo de dado: sensor de temperadura, umidade estado atual da bomba de água que irá irrigar e o estado da lampada de iluminação que ajuda no crescimento da plantação.
 
 
 
