@@ -7,4 +7,4 @@ por um aplicativo .apk ou uma página web construida para isso.
 ## - O Projeto
 
 Há duas versões desse projeto: uma feita para apresentação na escola e a para uso em casa. A diferença entre as duas está na possibilidade de linkar com a plataforma Blynk na versão para casa,
-além de claro o SSID da rede wifi em que ele vai se conectar.
+além de claro o SSID da rede wifi em que ele vai se conectar. Para o aplicativo, também há duas versões: uma configurada para um servidor local (apresentado na escola) e outra que está configurada para fazer a conexão dns direto da minha casa.
