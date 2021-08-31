@@ -3,6 +3,5 @@ Este foi meu Trabalho de Conclusão de Curso Técnico em Mecatrônica feito em 2
 por um aplicativo .apk ou uma página web construida para isso.
 
 <br />
-<br />
 
 ## - O Projeto
