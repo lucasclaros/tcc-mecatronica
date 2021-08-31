@@ -11,7 +11,7 @@ além de claro o SSID da rede wifi em que ele vai se conectar. Para o aplicativo
 
 ## - Funcionamento
 
-O programa configuras os servidores que estão armazenados cada tipo de dado: sensor de temperadura, umidade estado atual da bomba de água que irá irrigar e o estado da lampada de iluminação que ajuda no crescimento da plantação.
+O programa configuras os servidores que estão armazenados cada tipo de dado: sensor de temperadura, umidade estado atual da bomba de água que irá irrigar e o estado da lampada de iluminação que ajuda no crescimento da plantação e também um relógio RTC para monitoramento do horário a ser irrigado.
 <br />
 O aplicativo está disponível [aqui], sinta-se a vontade para modificá-lo/melhorá-lo e também adaptá-lo ao seu projeto colocando seu próprio servidor local como endereço url para consulta de dados.
 
@@ -21,6 +21,7 @@ Seguindo as orientações contidas nos arquivos "nodemcu.png" e "pinagem nodemcu
 * [Sensor de Temperatura DHT22]: pino D5
 * [Bomba de Água]: pino D4
 * [LED para Cultivo]: pino D3
+* [Relógio RTC]: pinos D1 e D2
 
 
 
@@ -30,3 +31,4 @@ Seguindo as orientações contidas nos arquivos "nodemcu.png" e "pinagem nodemcu
 [Sensor de Temperatura DHT22]: https://www.filipeflop.com/produto/sensor-de-umidade-e-temperatura-am2302-dht22/
 [Bomba de Água]: https://produto.mercadolivre.com.br/MLB-1420976166-mini-bomba-da-agua-12v-pulverizaco-robotica-_JM#position=29&search_layout=stack&type=item&tracking_id=55ae6545-3667-49c3-bec7-0f0373c7ab7e
 [LED para Cultivo]: https://produto.mercadolivre.com.br/MLB-1577644835-led-grow-cultivo-indoor-estufa-fullspectrum-28w-uvir-planta-_JM
+[Relógio RTC]: https://www.filipeflop.com/produto/real-time-clock-rtc-ds1307/
