@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'/>
+  <title>Estufa Automatizada com IOT</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: "Trebuchet MS", Arial;
+      }
+      table {
+       border-collapse: collapse;
+       border: solid;
+       border: 1;
+       border-color: #808080;
+       border-width: 2px;
+       width:60%;
+       margin-left:auto;
+       margin-right:auto;
+      }
+      th {
+        padding: 16px;
+        background-color: #0043af;
+        color: white;
+      }
+      tr {
+        border: 1.9px solid #808080;
+      }
+      tr:hover {
+        background-color: #bcbcbc;
+      }
+      td {
+        border: none;
+        padding: 16px;
+      }
+    .sensor {
+        color:black;
+        font-weight: bold;
+        padding: 8px;
+        text-align: center;
+      }
+  .button { 
+    background-color: #A9A9A9; 
+    border: none; 
+    color: white; 
+    padding: 8px 14.89px;
+    text-decoration: none; 
+    font-size: 20px; 
+    margin: 0 auto; 
+    cursor: pointer;
+    }
+  .button2 { 
+    background-color: #A9A9A9; 
+    border: none; 
+    color: white; 
+    padding: 8px 18.4px; <!-- 14.89 #195B6A -->
+    text-decoration: none;    
+    font-size: 20px; 
+    margin: 0 auto; 
+    cursor: pointer;
+    }     
+
+    </style>
+</head>
+  <body>
+    <h1>Projeto Estufa Automatizada com IOT</h1>
+    <div>
+      <table>
+        <tr>
+          <th>SENSORES</th>
+          <th>        </th>
+          <th>VALORES</th>
+        </tr>
+        <tr>
+          <td><span class="sensor">DHT22</span></td>
+          <td>Temperatura</td>
+          <td><span class="reading"><span id="temp"></span></span>&degC</td>
+        </tr>
+        <tr>
+          <td><span class="sensor">DHT22</span></td>
+          <td>Umidade</td>
+          <td><span class="reading"><span id="umi"></span></span> %</td>
+        </tr>
+        <tr>
+          <td><span class="sensor">Irrigação Automática</span></td>
+          <td><span id="rtc_state"></span></td>
+          <td>
+        <div style="display:inline">
+              <a href="/rtcon">
+                <input type="button" id="btn5"  class="button2" value="ON"/>
+              </a>
+              <a href="/rtcoff" >
+				<input type="button" id="btn6"  class="button" value="OFF"/>
+              </a>
+        </div>  
+        </td>
+        </tr>
+        <tr>
+          <td><span class="sensor">Water Pump</span></td>
+          <td><span id="m_state"></span></td>
+          <td>
+        <div style="display:inline">
+              <a href="/5/on">
+                <input type="button" id="btn"  class="button2" value="ON"/>
+              </a>
+              <a href="/5/off" >
+				<input type="button" id="btn2"  class="button" value="OFF"/>
+              </a>
+        </div>  
+        </td>
+        </tr>
+		
+		<tr>
+          <td><span class="sensor">LED Growth</span></td>
+          <td><span id="luz_state"></span></td>
+          <td>
+        <div style="display:inline">
+              <a href="/luz/on">
+                <input type="button" id="btn3"  class="button2" value="ON"/>
+              </a>
+              <a href="/luz/off" >
+				<input type="button" id="btn4"  class="button" value="OFF"/>
+              </a>
+        </div>  
+        </td>
+        </tr>
+		
+      </table>
+    </div>
+  <script type="text/javascript">
+	
+	
+	
+    setInterval(function() {
+        // Call a function repetatively with defined interval
+    temperatura();
+    umidade();
+   // u_solo();
+    sensor_nivel();
+    m_state();
+	att_btn();
+	att_btn2();
+	att_btn3();
+	att_btn4();
+	luz_state();
+      }, 50); //mSeconds update rate
+    function sensor_nivel()
+    {
+      var xhr = new XMLHttpRequest();
+      var url = "/ledstate";
+
+      xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("led-state").innerHTML = this.responseText;
+      }
+      };
+
+      xhr.open("GET", url, true);
+      xhr.send();
+    };
+    document.addEventListener('DOMContentLoaded', sensor_nivel, false);
+  
+  function temperatura()
+    {
+      var xhr = new XMLHttpRequest();
+      var url2 = "/temperatura";
+
+      xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("temp").innerHTML = this.responseText;
+      }
+      };
+
+      xhr.open("GET", url2, true);
+      xhr.send();
+    };
+    document.addEventListener('DOMContentLoaded', temperatura, false);
+  
+  function umidade()
+    {
+      var xhr = new XMLHttpRequest();
+      var url3 = "/umidade";
+
+      xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("umi").innerHTML = this.responseText;
+      }
+      };
+
+      xhr.open("GET", url3, true);
+      xhr.send();
+    };
+    document.addEventListener('DOMContentLoaded', umidade, false);
+  
+  function m_state()
+    {
+      var xhr = new XMLHttpRequest();
+      var url4 = "/mstate";
+
+      xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("m_state").innerHTML = this.responseText;
+      }
+      };
+
+      xhr.open("GET", url4, true);
+      xhr.send();
+    };
+    document.addEventListener('DOMContentLoaded', m_state, false);
+	
+  function luz_state()
+    {
+      var xhr = new XMLHttpRequest();
+      var url10 = "/luzstate";
+
+      xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("luz_state").innerHTML = this.responseText;
+      }
+      };
+
+      xhr.open("GET", url10, true);
+      xhr.send();
+    };
+    document.addEventListener('DOMContentLoaded', luz_state, false);
+  
+  function rtc_state()
+    {
+      var xhr = new XMLHttpRequest();
+      var url11 = "/rtcstate";
+
+      xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("rtc_state").innerHTML = this.responseText;
+      }
+      };
+
+      xhr.open("GET", url11, true);
+      xhr.send();
+    };
+    document.addEventListener('DOMContentLoaded', rtc_state, false);
+	
+	function att_btn()
+	{
+		const xhr = new XMLHttpRequest();
+		
+		xhr.onreadystatechange = function() {
+		
+			if(xhr.readyState == 4){ 
+				
+				if(xhr.status == 200){
+				
+					if(xhr.responseText == 'Motor Desligado'){
+					document.getElementById("btn2").style.background = "#228B22";
+					document.getElementById("btn").style.background = "#A9A9A9";
+					} else if(xhr.responseText == 'Motor Ligado'){
+					document.getElementById("btn").style.background = "#228B22";					
+					document.getElementById("btn2").style.background = "#A9A9A9";
+					}
+				}
+
+				if(xhr.status == 404){
+					console.log('Arquivo não encontrado');
+				}
+			}
+		
+		};
+		
+		xhr.open('get','http://aplicativotcc2.ddns.net:8110/mstate' , true);
+		xhr.send();
+	};
+	
+	
+	
+		function att_btn2()
+	{
+		const xhr = new XMLHttpRequest();
+		
+		xhr.onreadystatechange = function() {
+		
+			if(xhr.readyState == 4){ 
+				
+				if(xhr.status == 200){
+				
+					if(xhr.responseText == 'Motor Desligado'){
+					document.getElementById("btn2").style.background = "#228B22";
+					document.getElementById("btn").style.background = "#A9A9A9";
+					} else if(xhr.responseText == 'Motor Ligado'){
+					document.getElementById("btn").style.background = "#228B22";					
+					document.getElementById("btn2").style.background = "#A9A9A9";
+					}
+				}
+
+				if(xhr.status == 404){
+					console.log('Arquivo não encontrado');
+				}
+			}
+		
+		};
+		
+		xhr.open('get','http://192.168.0.110:8110/mstate' , true);
+		xhr.send();
+	};
+
+		function att_btn3()
+	{
+		const xhr = new XMLHttpRequest();
+		
+		xhr.onreadystatechange = function() {
+		
+			if(xhr.readyState == 4){ 
+				
+				if(xhr.status == 200){
+				
+					if(xhr.responseText == 'Luz Desligada'){
+					document.getElementById("btn4").style.background = "#228B22";
+					document.getElementById("btn3").style.background = "#A9A9A9";
+					} else if(xhr.responseText == 'Luz Ligada'){
+					document.getElementById("btn3").style.background = "#228B22";					
+					document.getElementById("btn4").style.background = "#A9A9A9";
+					}
+				}
+
+				if(xhr.status == 404){
+					console.log('Arquivo não encontrado');
+				}
+			}
+		
+		};
+		
+		xhr.open('get','http://192.168.0.110:8110/luzstate' , true);
+		xhr.send();
+	};
+
+		function att_btn4()
+	{
+		const xhr = new XMLHttpRequest();
+		
+		xhr.onreadystatechange = function() {
+		
+			if(xhr.readyState == 4){ 
+				
+				if(xhr.status == 200){
+				
+					if(xhr.responseText == 'Irrigação Automática Desligada'){
+					document.getElementById("btn6").style.background = "#228B22";
+					document.getElementById("btn5").style.background = "#A9A9A9";
+					} else if(xhr.responseText == 'Irrigação Automática Ligada'){
+					document.getElementById("btn5").style.background = "#228B22";					
+					document.getElementById("btn6").style.background = "#A9A9A9";
+					}
+				}
+
+				if(xhr.status == 404){
+					console.log('Arquivo não encontrado');
+				}
+			}
+		
+		};
+		
+		xhr.open('get','http://192.168.0.110:8110/rtcstate' , true);
+		xhr.send();
+	};	
+	
+  </script>
+  </body>
+</html>
