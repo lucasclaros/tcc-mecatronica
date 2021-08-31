@@ -11,9 +11,9 @@ além de claro o SSID da rede wifi em que ele vai se conectar. Para o aplicativo
 
 ## - Funcionamento
 
->O programa configuras os servidores que estão armazenados cada tipo de dado: sensor de temperadura, umidade estado atual da bomba de água que irá irrigar e o estado da lampada de iluminação que ajuda no crescimento da plantação e também um relógio RTC para monitoramento do horário a ser irrigado.
+O programa configuras os servidores que estão armazenados cada tipo de dado: sensor de temperadura, umidade estado atual da bomba de água que irá irrigar e o estado da lampada de iluminação que ajuda no crescimento da plantação e também um relógio RTC para monitoramento do horário a ser irrigado.
 <br />
->O aplicativo está disponível [aqui], sinta-se a vontade para modificá-lo/melhorá-lo e também adaptá-lo ao seu projeto colocando seu próprio servidor local como endereço url para consulta de dados.
+O aplicativo está disponível [aqui], sinta-se a vontade para modificá-lo/melhorá-lo e também adaptá-lo ao seu projeto colocando seu próprio servidor local como endereço url para consulta de dados.
 
 Seguindo as orientações contidas nos arquivos "nodemcu.png" e "pinagem nodemcu.txt", os sensores foram conectados no seguinte esquema:
 
