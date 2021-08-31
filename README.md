@@ -13,9 +13,9 @@ além de claro o SSID da rede wifi em que ele vai se conectar. Para o aplicativo
 
 O programa configuras os servidores que estão armazenados cada tipo de dado: sensor de temperadura, umidade estado atual da bomba de água que irá irrigar e o estado da lampada de iluminação que ajuda no crescimento da plantação.
 <br />
-O aplicativo está disponível aqui [Aplicativo]
+O aplicativo está disponível [aqui], sinta-se a vontade para modificá-lo/melhorá-lo e também adaptá-lo ao seu projeto colocando seu próprio servidor local como endereço url para consulta de dados.
 
 
 
-[MITAppInventor]: http://ai2.appinventor.mit.edu/
-[Aplicativo]: https://gallery.appinventor.mit.edu/?galleryid=43e643e5-a1fc-4e42-b63c-fa65002ae7c7
+[MIT App Inventor]: http://ai2.appinventor.mit.edu/
+[aqui]: https://gallery.appinventor.mit.edu/?galleryid=43e643e5-a1fc-4e42-b63c-fa65002ae7c7
