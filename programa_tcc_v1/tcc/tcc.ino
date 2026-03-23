@@ -27,10 +27,10 @@ BlynkTimer timer;
 
 int rele = 5;
 int m_state;
-char ssid[] = "Willy2";
-char pass[] = "40028922";
+char ssid[] = "YOUR_WIFI_SSID";
+char pass[] = "YOUR_WIFI_PASSWORD";
 
-char auth[] = "0909294076c844808a82925d185672c6";
+char auth[] = "YOUR_BLYNK_AUTH_TOKEN";
 
 
 

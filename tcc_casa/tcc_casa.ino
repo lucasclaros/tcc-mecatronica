@@ -32,8 +32,8 @@ int m_state;
 int luz_state;
 int modo_auto;
 int intervalo;
-char ssid[] = "Willy";
-char pass[] = "40028922";
+char ssid[] = "YOUR_WIFI_SSID";
+char pass[] = "YOUR_WIFI_PASSWORD";
 
 
 
@@ -346,7 +346,7 @@ void funAuto(){
             irrigou1 = 1;
             if(minutoIrrigacao1 < 60){
               minutoIrrigacao1 = minutoIrrigacao1 + 10;
-            }else if(minutoIrrigacao1 = 60){
+            }else if(minutoIrrigacao1 == 60){
                       minutoIrrigacao1 = 0;
                       if(horaIrrigacao1 < 24){
                         horaIrrigacao1 = horaIrrigacao1 + 1; 
@@ -369,7 +369,7 @@ void funAuto(){
             irrigou2 = 1;
            if(minutoIrrigacao2 < 60){
               minutoIrrigacao2 = minutoIrrigacao2 + 10;
-            }else if(minutoIrrigacao2 = 60){
+            }else if(minutoIrrigacao2 == 60){
                       minutoIrrigacao2 = 0;
                       if(horaIrrigacao2 < 24){
                         horaIrrigacao2 = horaIrrigacao2 + 1;
@@ -392,7 +392,7 @@ void funAuto(){
             irrigou3 = 1;
             if(minutoIrrigacao3 < 60){
               minutoIrrigacao3 = minutoIrrigacao3 + 10;
-            }else if(minutoIrrigacao3 = 60){
+            }else if(minutoIrrigacao3 == 60){
                       minutoIrrigacao3 = 0;
                       if(horaIrrigacao3 < 24){
                       horaIrrigacao3 = horaIrrigacao3 + 1; 

@@ -32,8 +32,8 @@ int m_state;
 int luz_state;
 int modo_auto;
 int intervalo;
-char ssid[] = "Willy";
-char pass[] = "40028922";
+char ssid[] = "YOUR_WIFI_SSID";
+char pass[] = "YOUR_WIFI_PASSWORD";
 
 
 
